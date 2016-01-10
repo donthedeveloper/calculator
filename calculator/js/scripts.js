@@ -1,3 +1,5 @@
+// TEST
+
 var previousNumber;
 var currentNumber;
 var currentPhrase;
@@ -130,6 +132,13 @@ for (var i = 0; i < buttonsArray.length; i++) {
 					currentPhrase = displayText;
 					troubleshoot();
 					break
+				case "clear":
+					previousNumber = null;
+					currentNumber = null;
+					currentPhrase = null;
+					displayText = "0";
+					troubleshoot();
+					break
 			}
 
 			document.getElementById("displayText").innerHTML = displayText;
@@ -155,7 +164,6 @@ function addDisplayNumber() {
 }
 
 function addDisplayDecimal() {
-	console.log("im in");
 	// If adding a decimal in the beginning, utilize 0
 	if ( currentPhrase == null ) {
 		currentPhrase = "0";
